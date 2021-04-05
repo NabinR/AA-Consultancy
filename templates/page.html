@@ -1,0 +1,65 @@
+{% extends "_layout.html" %} {% block content %}
+
+<section class="section">
+  <div class="container">
+      <h1 class="title mx-3 my-2 text-white has-text-centered" style="font-size:xx-large">
+      <b>{{ page.title }}</b>
+    </h1>
+    <!--
+      <h1 class="title text-light text-center" style="background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('/img/page-title-bg-1.jpg') no-repeat center center;">
+      <br /><br />
+      {{ page.title }}
+      <br /><br /><br /><br />
+    </h1>
+    -->
+    <!-- <p class="subtitle"><strong>{{ page.date }}</strong></p> -->
+    {{ page.content | safe }}
+  </div>
+</section>
+
+<section class="section">
+  <div class="columns">
+    <div class="column">
+      {% for asset in page.assets | sort %} {% if asset is matching("[.](jpg|png)$") %}
+      {% if loop.index % 5 == 1 %}
+      <a href="{{ get_url(path=asset) }}" data-toggle="lightbox" data-gallery="image-gallery">
+        <img class="img-fluid my-2" src="{{ get_url(path=asset) }}" alt="{{ asset }}" />
+      </a>
+      {% endif %} {% endif %} {% endfor %}
+    </div>
+    <div class="column">
+      {% for asset in page.assets | sort %} {% if asset is matching("[.](jpg|png)$") %}
+      {% if loop.index % 5 == 2 %}
+      <a href="{{ get_url(path=asset) }}" data-toggle="lightbox" data-gallery="image-gallery">
+        <img class="img-fluid my-2" src="{{ get_url(path=asset) }}" alt="{{ asset }}" />
+      </a>
+      {% endif %} {% endif %} {% endfor %}
+    </div>
+    <div class="column">
+      {% for asset in page.assets | sort %} {% if asset is matching("[.](jpg|png)$") %}
+      {% if loop.index % 5 == 3 %}
+      <a href="{{ get_url(path=asset) }}" data-toggle="lightbox" data-gallery="image-gallery">
+        <img class="img-fluid my-2" src="{{ get_url(path=asset) }}" alt="{{ asset }}" />
+      </a>
+      {% endif %} {% endif %} {% endfor %}
+    </div>
+    <div class="column">
+      {% for asset in page.assets | sort %} {% if asset is matching("[.](jpg|png)$") %}
+      {% if loop.index % 5 == 4 %}
+      <a href="{{ get_url(path=asset) }}" data-toggle="lightbox" data-gallery="image-gallery">
+        <img class="img-fluid my-2" src="{{ get_url(path=asset) }}" alt="{{ asset }}" />
+      </a>
+      {% endif %} {% endif %} {% endfor %}
+    </div>
+    <div class="column">
+      {% for asset in page.assets | sort %} {% if asset is matching("[.](jpg|png)$") %}
+      {% if loop.index % 5 == 0 %}
+      <a href="{{ get_url(path=asset) }}" data-toggle="lightbox" data-gallery="image-gallery">
+        <img class="img-fluid my-2" src="{{ get_url(path=asset) }}" alt="{{ asset }}" />
+      </a>
+      {% endif %} {% endif %} {% endfor %}
+    </div>
+</div>
+</section>
+
+{% endblock content %}

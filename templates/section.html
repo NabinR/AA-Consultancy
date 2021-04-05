@@ -1,0 +1,98 @@
+{% extends "_layout.html" %} {% block content %}
+
+<section class="services section">
+  <div class="container">
+    <h1 class="heading dark">{{ section.title }}</h4>
+    <div class="columns">
+      <div class="column is-three-quarter">
+        {% for page in section.pages %}        
+        {% if page.extra.link %}
+          {% if page.extra.link is matching ("^https://info\.nubik\.com.*") %}
+            <h2><a href="{{ page.extra.link | safe }}">{{ page.title }}</a></h2>
+          {% elif page.extra.link is matching ("^http.*") %}
+            <h2><a href="{{ page.extra.link | safe }}" target="_blank">{{ page.title }}</a></h2>
+          {% else %}
+            <h2><a href="{{ page.extra.link | safe }}">{{ page.title }}</a></h2>
+          {% endif %}
+        {% else %}
+          <h2><a href="{{ page.permalink | safe }}">{{ page.title }}</a></h2>
+        {% endif %}
+        <b>Published : {{ page.date | date(format="%d/%m/%Y") }}</b>
+        {% for asset in page.assets %}
+        {% if asset is matching("(banner)[.](jpg|png)$") %}
+        <img class="is-pulled-right ml-3 my-3" src="{{ resize_image(path=asset, width=360, height=240, op="fill") }}" alt="{{ page.title }}"/>
+        {% endif %}
+        {% endfor %}
+        {% if page.summary %}
+          <p class="">{{ page.summary | safe }}</p>          
+          {% if page.extra.link %}
+            {% if page.extra.link is matching ("^https://info\.nubik\.com.*") %}
+              <p class="text-right mr-2 mb-5"><a href="{{ page.extra.link }}">Continue Reading <b>. . .</b></a></p>
+            {% elif page.extra.link is matching ("^http.*") %}
+              <p class="text-right mr-2 mb-5"><a href="{{ page.extra.link }}" target="_blank">Continue Reading <b>. . .</b></a></p>
+            {% else %}
+              <p class="text-right mr-2 mb-5"><a href="{{ page.extra.link }}">Continue Reading <b>. . .</b></a></p>
+            {% endif %}
+          {% else %}
+            <p class="text-right mr-2 mb-5"><a href="{{ page.permalink }}">Continue Reading <b>. . .</b></a></p>
+          {% endif %}
+        {% else %}
+          <p class="">{{ page.content | safe }}</p>
+        {% endif %}
+        {% endfor %}
+      </div>
+
+      <div class="column is-one-quarter">
+        <br />
+        <h2>About <b>Company</b></h2>
+        <p>
+          Some text...
+        </p>
+        <h2>Some <b>More</b></h2>
+        <p>
+          Some more text...
+        </p>
+
+        <!-- Begin Mailchimp Signup Form -->
+        <div id="mc_embed_signup">
+          <form
+            action="https://mondelio.us1.list-manage.com/subscribe/post?u=13c1911f81df4693cee678f51&amp;id=1db0bc6f85"
+            method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate"
+            target="_blank" novalidate>
+            <div id="mc_embed_signup_scroll">
+              <label for="mce-EMAIL"><h2>Subscribe <b>Here</b></h2></label>
+              <br />
+              <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address"
+                required>
+                <br /><br />
+              <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+              <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text"
+                  name="b_13c1911f81df4693cee678f51_1db0bc6f85" tabindex="-1" value=""></div>
+              <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe"
+                  class="button"></div>
+            </div>
+          </form>
+        </div>
+        <br /><br /><br />
+        <!--End mc_embed_signup-->        
+
+        <h2>Recent <b>Posts</b></h2>
+        {% for page in section.pages %}
+        {% if page.extra.link %}
+          {% if page.extra.link is matching ("^https://info\.nubik\.com.*") %}
+            <h5><a href="{{ page.extra.link | safe }}">{{ page.title }}</a></h5>
+          {% elif page.extra.link is matching ("^http.*") %}
+            <h5><a href="{{ page.extra.link | safe }}" target="_blank">{{ page.title }}</a></h5>
+          {% else %}
+            <h5><a href="{{ page.extra.link | safe }}">{{ page.title }}</a></h5>
+          {% endif %}
+        {% else %}
+          <h5><a href="{{ page.permalink | safe }}">{{ page.title }}</a></h5>
+        {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+</div>
+</section>
+
+{% endblock content %}

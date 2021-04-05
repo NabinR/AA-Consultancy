@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="AA Consultancy" />
+  <metaname="author" content="Nabin Rayamajhi" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="nubik.com.au" />
+
+  {%if section.title%}
+  <title>{{ section.title }} - AA Consultancy</title>
+  <meta name="og:title" content="{{ section.title }} - AA Consultancy" />
+  {%endif%} {%if page.title%}
+  <title>{{ page.title }} - AA Consultancy</title>
+  <meta name="og:title" content="{{ page.title }} - AA Consultancy" />
+  {%endif%} {%if section.description%}
+  <meta name="description" content="{{ section.description }}" />
+  <meta name="og:description" content="{{ section.description }}" />
+  {%endif%} {%if page.description%}
+  <meta name="description" content="{{ page.description }}" />
+  <meta name="og:description" content="{{ page.description }}" />
+  {%endif%}
+
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins" rel="stylesheet">
+  <!-- <link rel="stylesheet" href="https://bulma.io/css/bulma-docs.min.css?v=202103052015" /> -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css" />
+
+  <link rel="stylesheet" href="{{ get_url(path="/css/site.css", cachebust=true) }}" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css"
+    integrity="sha512-Velp0ebMKjcd9RiCoaHhLXkR1sFoCCWXNp6w4zj1hfMifYB5441C+sKeBl/T/Ka6NjBiRfBBQRaQq65ekYz3UQ=="
+    crossorigin="anonymous" />
+
+  <script defer src="https://use.fontawesome.com/releases/v5.15.2/js/all.js"></script>
+</head>
+
+<body class="">
+  <nav class="navbar is-info is-fixed-top">
+    <div class="container">
+      <div class="navbar-brand">
+        <a class="" href="/">
+          <img class="ml-2 mt-2"  src="/img/logo.png" width="180" alt="AA Consultance Logo" > 
+          <!-- <h1 class="title has-text-white">AA Consultancy</h1>-->
+        </a>
+        <div class="navbar-burger" data-target="navbarExampleTransparentExample">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+
+      <div id="navbarExampleTransparentExample" class="navbar-menu">
+        <div class="navbar-start">
+        </div>
+
+        <div class="navbar-end is-size-5">
+          <a class="navbar-item mx-3" href="/#about-us">
+            About
+          </a>
+          <a class="navbar-item mx-3" href="/#profile">
+            Profile
+          </a>
+          <a class="navbar-item mx-3" href="/#contact-us">
+            Contact
+          </a>
+          <div class="navbar-item mx-3">
+            <div class="field is-grouped">
+              <!-- <p class="control">
+            <a class="bd-tw-button button" data-social-network="Twitter" data-social-action="tweet" data-social-target="https://bulma.io" target="_blank" href="https://twitter.com/intent/tweet?text=Bulma: a modern CSS framework based on Flexbox&amp;hashtags=bulmaio&amp;url=https://bulma.io&amp;via=jgthms">
+              <span class="icon">
+                <i class="fab fa-twitter"></i>
+              </span>
+              <span>
+                Tweet
+              </span>
+            </a>
+          </p> -->
+              <p class="control">
+                <a class="button is-link is-rounded is-medium" href="tel:+61433725749">
+                  <span class="icon">
+                    <i class="fas fa-phone-alt"></i>
+                  </span>
+                  <span>0433 725 749</span>
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div>
+    <main role="main">
+      {% block content %} {% endblock %}
+    </main>
+  </div>
+
+    <footer class="footer has-background-dark py-5">
+      <div class="has-text-centered">
+        <a href="https://nubik.com.au" target="_blank">
+          <span class="has-text-light">Powered by:</span>
+          <span style="color: coral;">Nü</span><span style="color: dodgerblue;">Bik</span>
+        </a>
+        <span class="has-text-light">|</span>
+        <a class="has-text-light" href="">&copy; 2021 - <span class="has-text-info">AA Consultancy</span></a>
+      </div>
+    </footer>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js"
+    integrity="sha512-Y2IiVZeaBwXG1wSV7f13plqlmFOx8MdjuHyYFVoYzhyRr3nH/NMDjTBSswijzADdNzMyWNetbLMfOpIPl6Cv9g=="
+    crossorigin="anonymous"></script>
+
+  <script>
+    $(document).on('click', '[data-toggle="lightbox"]', function (event) {
+      event.preventDefault();
+      $(this).ekkoLightbox();
+    });
+  </script>
+
+  <script async src="{{ get_url(path="js/site.js", cachebust=true) }}"></script>
+
+  <!-- Load Facebook SDK for JavaScript -->
+  <div id="fb-root"></div>
+  <script>
+    window.fbAsyncInit = function () {
+      FB.init({
+        xfbml: true,
+        version: "v9.0",
+      });
+    };
+
+    (function (d, s, id) {
+      var js,
+        fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s);
+      js.id = id;
+      js.src = "https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js";
+      fjs.parentNode.insertBefore(js, fjs);
+    })(document, "script", "facebook-jssdk");
+  </script>
+
+  <!-- Your Chat Plugin code -->
+  <div class="fb-customerchat" attribution="install_email" page_id="XXXXXXXXXX"></div>
+</body>
+
+</html>
