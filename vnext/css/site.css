@@ -84,8 +84,8 @@ video {
 
 .bd-best-list {
     align-items: stretch;
-    -webkit-animation-duration: 60s;
-    animation-duration: 60s;
+    -webkit-animation-duration: 120s;
+    animation-duration: 120s;
     -webkit-animation-iteration-count: infinite;
     animation-iteration-count: infinite;
     -webkit-animation-timing-function: linear;
