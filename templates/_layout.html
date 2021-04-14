@@ -34,7 +34,7 @@
     integrity="sha512-Velp0ebMKjcd9RiCoaHhLXkR1sFoCCWXNp6w4zj1hfMifYB5441C+sKeBl/T/Ka6NjBiRfBBQRaQq65ekYz3UQ=="
     crossorigin="anonymous" />
 
-  <script defer src="https://use.fontawesome.com/releases/v5.15.2/js/all.js"></script>
+  <script async src="https://use.fontawesome.com/releases/v5.15.2/js/all.js"></script>
 </head>
 
 <body class="">
@@ -110,21 +110,21 @@
       </div>
     </footer>
   
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js"
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js"
     integrity="sha512-Y2IiVZeaBwXG1wSV7f13plqlmFOx8MdjuHyYFVoYzhyRr3nH/NMDjTBSswijzADdNzMyWNetbLMfOpIPl6Cv9g=="
-    crossorigin="anonymous"></script>
+    crossorigin="anonymous"></script> -->
 
-  <script>
+  <!-- <script>
     $(document).on('click', '[data-toggle="lightbox"]', function (event) {
       event.preventDefault();
       $(this).ekkoLightbox();
     });
-  </script>
+  </script> -->
 
-  <script async src="{{ get_url(path="js/site.js", cachebust=true) }}"></script>
+  <script defer src="{{ get_url(path="/js/site.js", cachebust=true) }}"></script>
 
   <!-- Load Facebook SDK for JavaScript -->
-  <div id="fb-root"></div>
+  <!-- <div id="fb-root"></div>
   <script>
     window.fbAsyncInit = function () {
       FB.init({
@@ -142,10 +142,10 @@
       js.src = "https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js";
       fjs.parentNode.insertBefore(js, fjs);
     })(document, "script", "facebook-jssdk");
-  </script>
+  </script> -->
 
   <!-- Your Chat Plugin code -->
-  <div class="fb-customerchat" attribution="install_email" page_id="XXXXXXXXXX"></div>
+  <!-- <div class="fb-customerchat" attribution="install_email" page_id="XXXXXXXXXX"></div> -->
 </body>
 
 </html>

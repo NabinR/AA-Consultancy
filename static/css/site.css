@@ -84,8 +84,8 @@ video {
 
 .bd-best-list {
     align-items: stretch;
-    -webkit-animation-duration: 93.6s;
-    animation-duration: 93.6s;
+    -webkit-animation-duration: 60s;
+    animation-duration: 60s;
     -webkit-animation-iteration-count: infinite;
     animation-iteration-count: infinite;
     -webkit-animation-timing-function: linear;
@@ -109,7 +109,7 @@ video {
     margin-right: 16px;
     transition-duration: 172ms;
     transition-property: box-shadow, transform;
-    width: 504px;
+    width: 500px;
 }
 
 .bd-best-item.is-medium {
@@ -159,3 +159,11 @@ video {
         transform: translateX(calc(-100% + 3120px));
     }
 }
+
+/* Hero Background */
+.hero {
+	background: grey url(/img/powerlines.jpg) center / cover;
+}
+
+/* @media (max-width: 1024px) { .hero { background: grey url(/img/hero-2.jpg) center / cover; } }
+@media (max-width:  768px) { .hero { background: grey url(/img/hero-3.jpg) center / cover; } } */

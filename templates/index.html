@@ -1,9 +1,6 @@
 {% extends "_layout.html" %} {% block content %}
 
-<section class="hero is-medium" style="
-    background: url('/img/powerlines.jpg') no-repeat center center fixed;
-    background-size: cover;
-  ">
+<section class="hero">
     <!-- Hero head: will stick at the top -->
     <!--<div class="hero-head">
             <header class="navbar">
@@ -45,18 +42,39 @@
 
     <!-- Hero content: will be in the middle -->
     <div class="hero-body">
-        <div class="container has-text-centered">
-            <h1 class="title has-text-light">
+        <div class="has-text-centered">
+            <h1 class="title has-text-light is-spaced">
                 AA Consultancy
             </h1>
             <h2 class="subtitle has-text-light">
                 Specialist Project Management Consultant
             </h2>
-            <p class="p-6">
-                <a class="button is-link is-rounded is-large m-3" href="/#contact-us">
+
+            <div class="bd-best">
+                <div class="bd-best-list">
+    
+                    <article class="bd-best-item"><img src="/img/transmission.jpg" alt="Transmission Lines"></article>
+                    <article class="bd-best-item"><img src="/img/renewables.webp" alt="Renewable Energy"></article>
+                    <article class="bd-best-item"><img src="/img/substation.webp" alt="Substation"></article>
+                    <article class="bd-best-item"><img src="/img/transformer.jpg" alt="Transformer"></article>
+                    <article class="bd-best-item"><img src="/img/solar.jpg" alt="Solar"></article>
+                    <article class="bd-best-item"><img src="/img/windfarm.webp" alt="Windfarm"></article>
+                    <article class="bd-best-item"><img src="/img/powerlines.webp" alt="Transmission Lines"></article>    
+    
+                    <article class="bd-best-item"><img src="/img/transmission.jpg" alt="Transmission Lines"></article>
+                    <article class="bd-best-item"><img src="/img/renewables.webp" alt="Renewable Energy"></article>
+                    <article class="bd-best-item"><img src="/img/substation.webp" alt="Substation"></article>
+                    <article class="bd-best-item"><img src="/img/transformer.jpg" alt="Transformer"></article>
+                    <article class="bd-best-item"><img src="/img/solar.jpg" alt="Solar"></article>
+                    <article class="bd-best-item"><img src="/img/windfarm.webp" alt="Windfarm"></article>
+                    <article class="bd-best-item"><img src="/img/powerlines.webp" alt="Transmission Lines"></article>    
+    
+                </div>
+            </div>
+    
+                <a class="button is-link is-rounded is-large" href="/#contact-us">
                     <span>Get In Touch</span>
                 </a>
-            </p>
         </div>
     </div>
 
@@ -97,7 +115,8 @@
             <div class="column is-1"></div>
             <div class="column is-4">
                 <figure class="image">
-                    <img class="has-ratio" src="{{ get_url(path="/img/windfarm.webp", cachebust=true) }}" width="300" alt="Windfarm" />
+                    <img class="has-ratio" src="{{ get_url(path="/img/windfarm.webp", cachebust=true) }}" width="300"
+                        alt="Windfarm" />
                 </figure>
             </div>
         </div>
@@ -116,13 +135,13 @@
                         <div class="content py-5">
                             <h3 class="subtitle is-5 has-text-info">
                                 <i class="fas fa-tasks fa-2x mr-4 is-pulled-left"></i>
-                                Executive Management of the Project
+                                Executing the project management process from scope to completion
                             </h3>
                             <ul class="bd-focus-text mb-2">
                                 <li>Project Initiation</li>
                                 <li>Project Planning</li>
                                 <li>Project Execution</li>
-                                <li>Project Monitoring and Controlling, and</li>
+                                <li>Project Monitoring and Controlling</li>
                                 <li>Project Closing</li>
                             </ul>
                         </div>
@@ -150,7 +169,7 @@
                             <ul class="bd-focus-text is-pulled-right">
                                 <li>Project Communications Management</li>
                                 <li>Project Risk Management</li>
-                                <li>Project Procurement Management, and</li>
+                                <li>Project Procurement Management</li>
                                 <li>Project Stakeholder Management</li>
                                 <li>Project Contract Management</li>
                                 <li>Project Design and Contractor Management</li>
@@ -210,7 +229,7 @@
                         <div class="content py-5">
                             <h3 class="subtitle is-5 has-text-info">
                                 <i class="fas fa-hands-helping fa-2x mr-4 is-pulled-left"></i>
-                                Assisting in tendering and bidding management
+                                Assisting in tendering, bidding and tender evaluation management
                             </h3>
                         </div>
                     </div>
@@ -280,11 +299,12 @@
 
 <section id="profile" class="has-background-link-light py-6">
     <div class="container px-6 py-6">
-        <h2 class="subtitle is-2 has-text-centered mb-6">Profile</h2>
+        <h2 class="subtitle is-2 has-text-centered mb-6">Profile - Project Director</h2>
         <div class="card is-pulled-left mr-5 my-3">
             <div class="card-image">
                 <figure class="image">
-                    <img class="has-ratio" src="{{ get_url(path="/img/jog-limbu.jpg", cachebust=true) }}" alt="Jog Prasad Limbu" />
+                    <img class="has-ratio" src="{{ get_url(path="/img/jog-limbu.jpg", cachebust=true) }}"
+                        alt="Jog Prasad Limbu" />
                 </figure>
             </div>
         </div>
@@ -309,16 +329,16 @@
         <br />
         <h3 class="subtitle is-5 mb-3"><strong>Key Skills</strong></h3>
         <div class="tags">
-            <span class="tag is-medium">Leadership</span>
-            <span class="tag is-medium">Project Management</span>
-            <span class="tag is-medium">Project Delivery Strategy</span>
-            <span class="tag is-medium">Safety Leadership</span>
-            <span class="tag is-medium">Team-buliding</span>
-            <span class="tag is-medium">Budget and Cost Management</span>
-            <span class="tag is-medium">Contract Management</span>
-            <span class="tag is-medium">Stakeholder Management</span>
-            <span class="tag is-medium">Change Management</span>
-            <span class="tag is-medium">Bid Management</span>
+            <span class="tag is-medium has-background-warning-light">Leadership</span>
+            <span class="tag is-medium has-background-warning-light">Project Management</span>
+            <span class="tag is-medium has-background-warning-light">Project Delivery Strategy</span>
+            <span class="tag is-medium has-background-warning-light">Safety Leadership</span>
+            <span class="tag is-medium has-background-warning-light">Team-buliding</span>
+            <span class="tag is-medium has-background-warning-light">Budget and Cost Management</span>
+            <span class="tag is-medium has-background-warning-light">Contract Management</span>
+            <span class="tag is-medium has-background-warning-light">Stakeholder Management</span>
+            <span class="tag is-medium has-background-warning-light">Change Management</span>
+            <span class="tag is-medium has-background-warning-light">Bid Management</span>
         </div>
 
         <div class=" is-pulled-left mr-6">
@@ -338,19 +358,19 @@
                         <td>2011 – 2018</td>
                     </tr>
                     <tr>
-                        <td>Manager Projects Delivery, Zinfra (Jemena)</td>
+                        <td>Manager Projects Delivery, Transmission & Distribution (T & D), Zinfra (Jemena)</td>
                         <td>2009 - 2011</td>
                     </tr>
                     <tr>
-                        <td>Manager Projects Delivery, Transfield Services</td>
+                        <td>Manager Projects Delivery, T & D Transfield Services</td>
                         <td>2004 - 2009</td>
                     </tr>
                     <tr>
-                        <td>Senior Project Manager, AREVA Transmission & Distribution Australia</td>
+                        <td>Senior Project Manager, AREVA T & D Australia</td>
                         <td>2000 - 2004 </td>
                     </tr>
                     <tr>
-                        <td>Project Manager / Power System Engineer, GEC ALSTOM, NZ</td>
+                        <td>Project Manager / Power System Engineer, T & D GEC ALSTOM, NZ</td>
                         <td>1991 - 2000 </td>
                     </tr>
                 </tbody>
