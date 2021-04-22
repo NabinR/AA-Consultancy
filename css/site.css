@@ -1,0 +1,169 @@
+body {
+    font-family: 'Poppins', sans-serif, serif;
+    font-size: medium;
+    margin-top: 9vh;
+}
+
+video {
+    object-fit: cover;
+    width: 100vw;
+    height: 95vh;
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+.bd-focus-item {
+    position: relative;
+}
+
+.bd-focus-item::before {
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: #fafafa;
+    border-radius: 6px;
+    content: '';
+    display: block;
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(1.1);
+    transform-origin: center;
+    transition-duration: 172ms;
+    transition-property: opacity, transform;
+}
+
+.bd-focus-item:hover::before {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.bd-focus-item {
+    align-items: center;
+    border-radius: 6px;
+    display: flex;
+    padding: 1.5rem;
+    position: relative;
+}
+
+.bd-focus-item .title a,
+.bd-focus-item .subtitle {
+    transition-duration: 172ms;
+    transition-property: color;
+}
+
+.bd-focus-item .title {
+    position: relative;
+    transition-duration: 172ms;
+    transition-property: color;
+}
+
+.bd-focus-item .subtitle {
+    color: #7a7a7a;
+    position: relative;
+}
+
+.bd-focus-item .icon {
+    color: #7a7a7a;
+    position: relative;
+}
+
+.bd-focus-item .bd-focus-text {
+    color: #7a7a7a;
+    position: relative;
+}
+
+.bd-best {
+    height: calc(386px + 3rem);
+    padding: 1.5rem 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.bd-best-list {
+    align-items: stretch;
+    -webkit-animation-duration: 120s;
+    animation-duration: 120s;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    display: flex;
+    left: 0;
+    position: absolute;
+    top: 1.5rem;
+    -webkit-animation-name: bd-BestCarousel;
+    animation-name: bd-BestCarousel;
+}
+
+.bd-best-list:hover {
+    -webkit-animation-play-state: paused;
+    animation-play-state: paused;
+}
+
+.bd-best-item {
+    flex-grow: 0;
+    flex-shrink: 0;
+    margin-right: 16px;
+    transition-duration: 172ms;
+    transition-property: box-shadow, transform;
+    width: 500px;
+}
+
+.bd-best-item.is-medium {
+    font-size: 1.125em;
+}
+
+.bd-best-item.is-large {
+    font-size: 1.25em;
+}
+
+.bd-best-item.is-huge {
+    font-size: 1.5em;
+}
+
+.bd-best-item:hover {
+    box-shadow: 0 1em 1em rgba(0, 0, 0, 0.1);
+    transform: translateY(-0.5em);
+}
+
+.screenshot {
+    align-self: flex-start;
+    display: block;
+    transition-duration: 172ms;
+    transition-property: box-shadow, transform;
+}
+
+.screenshot,
+.screenshot img {
+    border-radius: 6px;
+}
+
+.screenshot img {
+    display: inline-block;
+    height: auto;
+    vertical-align: top;
+    width: auto;
+}
+
+@-webkit-keyframes bd-BestCarousel {
+    100% {
+        transform: translateX(calc(-100% + 3120px));
+    }
+}
+
+@keyframes bd-BestCarousel {
+    100% {
+        transform: translateX(calc(-100% + 3120px));
+    }
+}
+
+/* Hero Background */
+.hero {
+	background: grey url(/img/powerlines.jpg) center / cover;
+}
+
+/* @media (max-width: 1024px) { .hero { background: grey url(/img/hero-2.jpg) center / cover; } }
+@media (max-width:  768px) { .hero { background: grey url(/img/hero-3.jpg) center / cover; } } */
